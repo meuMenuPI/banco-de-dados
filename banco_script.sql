@@ -59,7 +59,7 @@ CREATE TABLE  `cardapio` (
 	`nome` VARCHAR(45) ,
 	`preco` DOUBLE ,
 	`estiloGastronomico` VARCHAR(45) ,
-    `descricao` VARCHAR(200),
+    `descricao` VARCHAR(100),
 	PRIMARY KEY (`idcardapio`, `fkRestaurante`),
     FOREIGN KEY (`fkRestaurante`)
     REFERENCES `restaurante` (`idrestaurante`));
