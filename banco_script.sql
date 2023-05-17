@@ -2,6 +2,7 @@ create database meuMenu;
 -- drop database meuMenu;
 use meuMenu;
 
+
 CREATE TABLE  `usuario` (
   `idusuario` INT ,
   `nome` VARCHAR(45) ,
@@ -58,11 +59,7 @@ CREATE TABLE  `cardapio` (
 	`nome` VARCHAR(45) ,
 	`preco` DOUBLE ,
 	`estiloGastronomico` VARCHAR(45) ,
-    `qtd_carboidratos` varchar(45),
-    `qtd_proteinas` varchar(45),
-    `qtd_acucar` varchar(45),
-    `qtd_calorias` varchar(45),
-    `qtd_gorduras_totais` varchar(45),
+    `descricao` VARCHAR(200),
 	PRIMARY KEY (`idcardapio`, `fkRestaurante`),
     FOREIGN KEY (`fkRestaurante`)
     REFERENCES `restaurante` (`idrestaurante`));
@@ -136,4 +133,9 @@ CREATE TABLE  acessibilidade (
 	FOREIGN KEY (`fkRestaurante`)
 	REFERENCES restaurante (idrestaurante)
 );
+
+
+select * from usuario;
+select * from restaurante;
+select * from cardapio;
  
