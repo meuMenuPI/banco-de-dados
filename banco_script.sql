@@ -11,6 +11,7 @@ CREATE TABLE  `usuario` (
   `email` VARCHAR(45) ,
   `tipoComidaPreferida` VARCHAR(45) ,
   `senha` VARCHAR(45) ,
+  `fotoPerfil` VARCHAR(110),
   PRIMARY KEY (`idusuario`));
 
 
@@ -60,6 +61,7 @@ CREATE TABLE  `cardapio` (
 	`preco` DOUBLE ,
 	`estiloGastronomico` VARCHAR(45) ,
     `descricao` VARCHAR(100),
+    `fotoPrato` VARCHAR(110),
 	PRIMARY KEY (`idcardapio`, `fkRestaurante`),
     FOREIGN KEY (`fkRestaurante`)
     REFERENCES `restaurante` (`idrestaurante`));
@@ -118,6 +120,8 @@ CREATE TABLE funcionamento (
 	FOREIGN KEY (`fkRestaurante`)
     REFERENCES restaurante (idrestaurante)
     );
+    
+    
 
 
 -- -----------------------------------------------------
@@ -134,8 +138,21 @@ CREATE TABLE  acessibilidade (
 	REFERENCES restaurante (idrestaurante)
 );
 
+CREATE TABLE restaurante_foto (
+	`id` INT,
+    `fkRestaurante` INT,
+    `nome_foto` VARCHAR(110),
+    `fachada` BOOLEAN,
+    `interior` BOOLEAN,
+    PRIMARY KEY (`idfoto`),
+    FOREIGN KEY (`fkRestaurante`)
+    REFERENCES `restaurante` (`idrestaurante`)
+);
+
 
 select * from usuario;
 select * from restaurante;
 select * from cardapio;
+
+select * from restaurante_foto;
  
