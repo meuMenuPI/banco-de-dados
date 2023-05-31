@@ -139,12 +139,12 @@ CREATE TABLE  acessibilidade (
 );
 
 CREATE TABLE restaurante_foto (
-	`id` INT,
+	`idFoto` INT,
     `fkRestaurante` INT,
     `nome_foto` VARCHAR(110),
     `fachada` BOOLEAN,
     `interior` BOOLEAN,
-    PRIMARY KEY (`idfoto`),
+    PRIMARY KEY (`idFoto`),
     FOREIGN KEY (`fkRestaurante`)
     REFERENCES `restaurante` (`idrestaurante`)
 );
